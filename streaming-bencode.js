@@ -31,13 +31,18 @@ BencodeTransformer.prototype._transform = function (chunk, encoding, next) {
 };
 
 
-var bt = new BencodeTransformer();
+module.exports = {transformer: function () {
+	return new BencodeTransformer();
+}
+};
 
-process.stdin.setRawMode(true);
+// var bt = new BencodeTransformer();
 
-process.stdin.pipe(bt).on('data', function (data) {
-	console.error('Stream decoded', data);
-}).on('error', console.log);
+// process.stdin.setRawMode(true);
+
+// process.stdin.pipe(bt).on('data', function (data) {
+// 	console.error('Stream decoded', data);
+// }).on('error', console.log);
 
 //
 //require('net').createServer(function (socket) {
