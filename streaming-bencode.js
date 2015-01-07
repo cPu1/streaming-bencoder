@@ -22,3 +22,10 @@ BencodeTransformer.prototype._transform = function (chunk, encoding, next) {
 		next(err);
 	}
 };
+
+
+module.exports = {
+		transformer: function () {
+			return new BencodeTransformer();
+		}
+};
