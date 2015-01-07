@@ -8,7 +8,7 @@ A streaming bencode decoder for Node.js written using ECMAScript 6 generators. C
 
 Examples:
 ```javascript
-var bencoder = require('streaming-bencoder'),
+var bencoder = require('streaming-bencode'),
   ReadableStream = require('stream').Readable;
   
 var source = new Readable();
@@ -26,5 +26,16 @@ source.pipe(bencoder.transformer()).on('data', console.log);
   integer: 12345,
   dictionary: { key: 'This is a string within a dictionary' },
   list: [ 1, 2, 3, 4, 'string', 5, {} ] }
+```
+
+
+Example (Decode as you type):
+```javascript
+var bencoder = require('streaming-bencode');
+
+process.stdin.setRawMode(true); // override default cooked mode
+process.stdin.pipe(bencoder.transformer()).on('data', console.log.bind(console, 'Parsed'));
+
+
   
-  
+```
