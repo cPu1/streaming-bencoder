@@ -33,11 +33,22 @@ BencodeTransformer.prototype._transform = function (chunk, encoding, next) {
 
 var bt = new BencodeTransformer();
 
-process.stdin.setRawMode(true);
+var d = 'd5:elistle6:elist2l0:0:0:0:1:12:22e0:0:6:string11:Hello World7:integeri12345e10:dictionaryd3:key36:This is a string within a dictionarye4:listli1ei2ei3ei4e6:stringi5edeee';
 
-process.stdin.pipe(bt).on('data', function (data) {
-	console.error('Stream decoded', data);
-}).on('error', console.log);
+var Readable = require('stream').Readable,
+	source = new Readable();
+
+source._read= function () {};
+
+source.pipe(bt).on('data', console.log);
+
+source.push(d);
+
+//process.stdin.setRawMode(true);
+//
+//process.stdin.pipe(bt).on('data', function (data) {
+//	console.error('Stream decoded', data);
+//}).on('error', console.log);
 
 //
 //require('net').createServer(function (socket) {
