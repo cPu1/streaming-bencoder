@@ -1,7 +1,10 @@
-streaming-bencoder
+streaming-bencode
 ==================
 A streaming bencode decoder for Node.js written using ECMAScript 6 generators. Can parse any bencoded value in a stream of bencoded values.
 
+**Installation**
+
+`npm install streaming-bencode`
 
 Examples:
 ```javascript
