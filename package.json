@@ -1,0 +1,25 @@
+{
+  "name": "streaming-bencode",
+  "version": "1.0.0",
+  "description": "A streaming bencode decoder for Node.js written using ECMAScript 6 generators",
+  "main": "streaming-bencode.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cPu1/streaming-bencoder.git"
+  },
+  "keywords": [
+    "bencode",
+    "stream",
+    "transform",
+    "generator"
+  ],
+  "author": "c.P.u1",
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/cPu1/streaming-bencoder/issues"
+  },
+  "homepage": "https://github.com/cPu1/streaming-bencoder"
+}
