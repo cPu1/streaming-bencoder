@@ -97,7 +97,7 @@ var decoderProto = {
 			while(intValue === undefined) {
 				let chr;
 				while(this.position < this.input.length && (chr = this.input[this.position ++]) !== END_OF_TYPE) {
-					if(chr < 48 || chr > 57) this.throwError('Invalid integer value', chr, this.position - 1);
+					if ((chr < 48 || chr > 57) && (chr != 45)) this.throwError('Invalid integer value', chr, this.position - 1);
 				}
 				if(chr === END_OF_TYPE) {
 					intValue = + this.input.slice(offset, this.position - 1).toString();
